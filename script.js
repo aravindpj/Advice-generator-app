@@ -22,6 +22,16 @@ class qouteView {
     this._qoute.textContent = this._data.qoute;
     this._id.textContent = this._data.id;
   }
+  renderSpiner(){
+    const markup=`
+    <div class="spinner">
+        <img src="images/712.svg" alt="" width="60px">
+    </div>
+   `
+    this._clear()
+    this._qoute.insertAdjacentHTML("afterbegin",markup)
+
+  }
 }
 const view = new qouteView();
 
@@ -38,6 +48,7 @@ const getJSON = async function (url) {
 };
 
 const qouteGenerator = async function () {
+  view.renderSpiner()
   const data = await getJSON(`https://api.adviceslip.com/advice`);
   const { slip } = data;
   const qouteData = {
