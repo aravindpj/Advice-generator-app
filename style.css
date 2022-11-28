@@ -55,7 +55,9 @@
 .dice:hover{
     box-shadow:hsl(150, 100%, 66%) 0px 0px 30px 0px ;
 }
-
+.dice img:hover{
+    animation: rotate 2s infinite linear;
+}
 
 .spinner img {
     animation: rotate 2s infinite linear;
